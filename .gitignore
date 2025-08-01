@@ -1,0 +1,5 @@
+*tfstate*
+.terraform*
+secrets.auto.tfvars
+servers.tf
+.DS_Store

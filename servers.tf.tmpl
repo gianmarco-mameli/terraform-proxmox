@@ -1,0 +1,33 @@
+locals {
+  servers = {
+    server-master = {
+      count    = 3
+      cores    = 2
+      memory   = 8192
+      ip_start = "1"
+      disk = [
+        {
+          interface = "scsi1"
+          size      = 100
+          discard   = "on"
+          ssd       = true
+          iothread  = true
+        }
+      ]
+    }
+    server-worker = {
+      count    = 1
+      cores    = 1
+      memory   = 4096
+      ip_start = "4"
+      usb = "xxxx:XXXX"
+    }
+    server-test = {
+      name_override = "testnode"
+      count         = 1
+      cores         = 1
+      memory        = 2048
+      ip_start      = "5"
+    }
+  }
+}
