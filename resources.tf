@@ -6,6 +6,9 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
   source_raw {
     data = <<-EOF
     #cloud-config
+    preserve_hostname: false
+    create_hostname_file: true
+    prefer_fqdn_over_hostname: false
     hostname: ${each.key}
     fqdn: ${each.key}.${var.domain}
     users:
@@ -18,9 +21,9 @@ resource "proxmox_virtual_environment_file" "user_data_cloud_config" {
         ssh_authorized_keys:
           - ${data.onepassword_item.ssh_key.public_key}
         sudo: ALL=(ALL) NOPASSWD:ALL
-    packages:
-      - qemu-guest-agent
-    manage_etc_hosts: true
+    # packages:
+    #   - qemu-guest-agent
+    manage_etc_hosts: localhost
     EOF
 
     file_name = "user-data-${each.key}.yaml"
