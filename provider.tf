@@ -4,12 +4,14 @@ terraform {
   }
   required_providers {
     proxmox = {
+      // https://github.com/bpg/terraform-provider-proxmox/releases
       source  = "bpg/proxmox"
-      version = "0.80.0"
+      version = "0.87.0"
     }
     onepassword = {
+      // https://github.com/1Password/terraform-provider-onepassword/releases
       source  = "1Password/onepassword"
-      version = "2.1.2"
+      version = "2.2.1"
     }
   }
 }
