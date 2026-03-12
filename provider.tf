@@ -11,7 +11,7 @@ terraform {
     onepassword = {
       // https://github.com/1Password/terraform-provider-onepassword/releases
       source  = "1Password/onepassword"
-      version = "2.2.1"
+      version = "3.3.0"
     }
   }
 }
@@ -24,6 +24,6 @@ provider "proxmox" {
 }
 
 provider "onepassword" {
-  url     = var.onepassword_url
-  account = var.onepassword_account
+  connect_url   = var.onepassword_url
+  connect_token = var.onepassword_token
 }

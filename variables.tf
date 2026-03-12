@@ -26,14 +26,14 @@ variable "base_disk_size" {
   default     = 50
 }
 
-variable "onepassword_account" {
-  description = "Your 1Password account email"
+variable "onepassword_url" {
+  description = "Your 1Password Connect URL"
   type        = string
   default     = ""
 }
 
-variable "onepassword_url" {
-  description = "Your 1Password account URL"
+variable "onepassword_token" {
+  description = "Your 1Password Connect token"
   type        = string
   default     = ""
 }
