@@ -11,7 +11,7 @@ terraform {
     onepassword = {
       // https://github.com/1Password/terraform-provider-onepassword/releases
       source  = "1Password/onepassword"
-      version = "3.3.0"
+      version = "3.3.1"
     }
   }
 }
