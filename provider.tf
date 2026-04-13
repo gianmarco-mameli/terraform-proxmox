@@ -6,7 +6,7 @@ terraform {
     proxmox = {
       // https://github.com/bpg/terraform-provider-proxmox/releases
       source  = "bpg/proxmox"
-      version = "0.100.0"
+      version = "0.101.1"
     }
     onepassword = {
       // https://github.com/1Password/terraform-provider-onepassword/releases
