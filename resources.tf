@@ -34,6 +34,8 @@ resource "proxmox_virtual_environment_vm" "servers" {
   for_each  = { for s in local.servers_flat : format("%s", s.name) => s }
   name      = each.key
   node_name = var.proxmox_host
+  hotplug = "disk,network,usb,cpu"
+
   initialization {
     interface         = var.initialization_interface
     user_data_file_id = proxmox_virtual_environment_file.user_data_cloud_config[each.key].id
@@ -83,7 +85,7 @@ resource "proxmox_virtual_environment_vm" "servers" {
     }
   }
   dynamic "disk" {
-    for_each = each.value.disk != [] ? each.value.disk : []
+    for_each = length(each.value.disk) > 0 ? each.value.disk : []
     content {
       interface    = contains(keys(disk.value), "interface") ? disk.value.interface : "scsi0"
       size         = contains(keys(disk.value), "size") ? disk.value.size : var.base_disk_size
