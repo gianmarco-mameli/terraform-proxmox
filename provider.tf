@@ -6,12 +6,12 @@ terraform {
     proxmox = {
       // https://github.com/bpg/terraform-provider-proxmox/releases
       source  = "bpg/proxmox"
-      version = "0.116.0"
+      version = "0.120.0"
     }
     onepassword = {
       // https://github.com/1Password/terraform-provider-onepassword/releases
       source  = "1Password/onepassword"
-      version = "3.3.1"
+      version = "3.4.1"
     }
   }
 }
