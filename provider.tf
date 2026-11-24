@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.17.2"
   backend "local" {
     path = "terraform.tfstate"
   }
@@ -6,7 +7,7 @@ terraform {
     proxmox = {
       // https://github.com/bpg/terraform-provider-proxmox/releases
       source  = "bpg/proxmox"
-      version = "0.120.0"
+      version = "0.123.1"
     }
     onepassword = {
       // https://github.com/1Password/terraform-provider-onepassword/releases
